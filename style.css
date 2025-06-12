@@ -1,0 +1,646 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* Corrigi a capitalização */
+}
+
+body {
+    background: linear-gradient(#fefeff, #1b2229);
+    color: #060606;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+/* A .navbar tinha um erro de digitação: "left: 1opx;" corrigi para "left: 10px;" */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 0;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.navbar a {
+    display: inline-block;
+    margin: 20px 20px;
+    font-size: 25px;
+    color: #101010;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    /* Possível erro: "var(--1)" não é uma variável CSS válida. 
+       Talvez queria usar "var(--delay)" ou algo do tipo? Mantive como estava, mas precisa ser ajustado se necessário. */
+    animation-delay: calc(0.2s * var(--1));
+}
+
+.navbar a:hover {
+    color: #101010;
+}
+.navbar ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.home {
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+nav ul li a {
+    color: #050505;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #080808;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.container {
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 200px;
+    position: absolute;
+    left: 60px;
+    font-size: 30px;
+    color: burlywood;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 2s ease forwards;
+}
+
+.logo div {
+    color: #f8f5f5;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+
+.home-content {
+    max-width: 700px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.home-content h1 {
+    font-size: 90px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 2s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 25px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content h1 span {
+    color: burlywood;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #1b2229;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #f5f4f4;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    animation: slideTop 1s ease forwards;
+    box-shadow: 0 0 5px #f5f4f4,
+        0 0 25px #f5f4f4;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px #f5f4f4,
+        0 0 25px #f5f4f4,
+        0 0 50px #f5f4f4,
+        0 0 100px #f5f4f4,
+        0 0 200px #f5f4f4;
+}
+
+.sobre {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25rem;
+}
+
+.container2 img {
+    display: flex;
+    padding-bottom: 20%;
+    max-width: 630px;
+    height: auto;
+    width: 700px;
+    border-radius: 8px;
+    /* "position: center" não é válido em CSS, removido */
+}
+
+.container1 {
+    position: absolute;
+    max-width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.home-content img {
+    position: absolute;
+    top: 200px;
+    right: -70px;
+    width: 650px;
+    border-radius: 10px;
+}
+
+.about-text {
+    max-width: 600px;
+    color: #090909;
+    /* right: -200px; removido pois não faz sentido aqui */
+}
+
+.about-text span {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    color: burlywood;
+}
+
+.about-text h2 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+}
+
+.about-text h1 {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #1b2229;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #f5f4f4;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.about-text p {
+    font-size: 20px;
+    color: aliceblue;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+#services {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+    color: #f5f4f4;
+}
+
+.subtitulo span {
+    color: burlywood;
+}
+
+.container3 {
+    padding: 90px;
+}
+
+.lista-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.lista-services div {
+    background-color: transparent;
+    padding: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    /* Corrigi font-weight de "20px" para "500" */
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #1b2229,
+        1px 1px 40px #f5f4f4;
+}
+
+.lista-services div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.lista-services div a {
+    text-decoration: none;
+    color: #f5f4f4;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.lista-services div:hover {
+    transform: translateY(-50px);
+}
+
+#pacotes {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+.container4 {
+    padding: 90px;
+}
+
+.lista-pacotes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.lista-pacotes div {
+    background-color: transparent;
+    padding: 40px;
+    font-size: 20px;
+    font-weight: 500;
+    /* Corrigi font-weight */
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #1b2229,
+        1px 1px 40px #f5f4f4;
+}
+
+.lista-pacotes div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.lista-pacotes div p {
+    font-size: 20px;
+    color: aliceblue;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.lista-pacotes div a {
+    text-decoration: none;
+    color: #f5f4f4;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.lista-pacotes div:hover {
+    transform: translateY(-50px);
+}
+
+footer {
+    background-color: transparent;
+    padding: 40px 10px;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.section h4 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section ul li {
+    margin: 5px 0;
+}
+
+.section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.section ul li a:hover {
+    color: #0b0b0b;
+}
+
+.section p {
+    margin: 5px 0;
+    color: #f5f4f4;
+}
+
+.social {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.bottom a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.bottom a:hover {
+    color: #1da1f2;
+}
+
+.bottom p {
+    color: #f5f4f4;
+}
+
+/* Animações */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@media (max-width: 1024px) {
+    .home-content h1 {
+        font-size: 60px;
+    }
+
+    .home-content p {
+        font-size: 18px;
+    }
+
+    .home-content img {
+        width: 450px;
+        right: -20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+
+    .sobre {
+        gap: 5rem;
+    }
+
+    .container2 img {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column-reverse;
+        padding: 10px 5%;
+        align-items: center;
+        display: none;
+    }
+
+    .navbar a {
+        margin: 0;
+        font-size: 20px;
+    }
+    .navbar ul{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 5% 0;
+        height: auto;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 45px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    .home-content img {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 0 5%;
+    }
+
+    .container2 img {
+        width: 100%;
+    }
+
+    .about-text h2, .about-text span {
+        font-size: 36px;
+    }
+
+    .subtitulo {
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+
+    .lista-services, .lista-pacotes {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .container3, .container4 {
+        padding: 50px 20px;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .btn-box {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .about-text p, .lista-services div p, .lista-pacotes div p {
+        font-size: 16px;
+    }
+
+    .navbar {
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+
