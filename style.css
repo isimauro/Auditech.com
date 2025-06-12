@@ -630,7 +630,33 @@ footer .container {
     .logo {
         font-size: 20px;
     }
+}@media (min-width: 1280px) {
+    .home-content h1 {
+        font-size: 100px;
+    }
+
+    .home-content p {
+        font-size: 28px;
+    }
+
+    .home-content img {
+        width: 700px;
+        right: 0;
+    }
+
+    .about-text h2, .about-text span {
+        font-size: 64px;
+    }
+
+    .subtitulo {
+        font-size: 72px;
+    }
+
+    .container3, .container4 {
+        padding: 120px;
+    }
 }
+
 
 
 
